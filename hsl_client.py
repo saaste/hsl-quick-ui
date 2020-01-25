@@ -1,6 +1,10 @@
 from datetime import datetime
 import requests
 
+"""
+Schema: https://github.com/HSLdevcom/digitransit-ui/blob/master/build/schema.json
+"""
+
 
 def get_next_route(origin, destination):
     endpoint = "https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql"
@@ -29,6 +33,7 @@ def get_next_route(origin, destination):
                         stop {
                             code
                             name
+                            platformCode
                         }
                     }
                     to {
@@ -68,6 +73,7 @@ def get_next_route(origin, destination):
                 route_name = leg['trip']['routeShortName']
                 stop_name = leg['from']['stop']['name']
                 stop_code = leg['from']['stop']['code']
+                stop_platform = leg['from']['stop']['platformCode']
                 icon = mode_to_icon(mode)
                 steps.append({
                     "mode": mode,
@@ -75,6 +81,7 @@ def get_next_route(origin, destination):
                     "route_name": route_name,
                     "stop_name": stop_name,
                     "stop_code": stop_code,
+                    "stop_platform": stop_platform,
                     "icon": icon
                 })
         routes.append({

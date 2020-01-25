@@ -27,21 +27,20 @@ body {
     padding-bottom: 0
 }
 .route-options small {
-    margin-left: 2.3em;
     color: #133c60;
 }
 .material-icons {
     vertical-align: middle;
 }
 .directions_bus {
-    color: #0d406d;
+    color: #194F7F;
 }
 .directions_railway {
-    color: #601b77;
+    color: #66197F;
 }
 .subway {
-    color: #771a1a;
+    color: #7F1919;
 }
 .tram {
-    color: #206315;
+    color: #277F19;
 }
