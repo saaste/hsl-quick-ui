@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Next routes</title>
+</head>
+<body>
+<ul id="routes">
+    {% for route, steps in routes.items() %}
+    <h1>{{ route }}</h1>
+    {% for step in steps %}
+        {{ step }}
+    {% endfor %}
+    {% endfor %}
+</ul>
+</body>
+</html>
