@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <title>Next routes</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-old-ie-min.css">
@@ -10,55 +12,10 @@
     <!--[if gt IE 8]><!-->
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
     <!--<![endif]-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="refresh" content="60" />
 </head>
-<style>
-    body {
-        font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
-    }
-    .route-name {
-        background: #ddd;
-        color: #bf4d3b;
-        padding: 0.5em;
-    }
-
-    .route-options {
-        list-style-type: none;
-        margin: 0;
-        padding: 0 1em;
-    }
-
-    .route-options li {
-        display: block;
-        margin-bottom: 0.5em;
-        padding-bottom: 0.5em;
-        color: #00203D;
-        border-bottom: 1px dotted #bf4d3b;
-    }
-    .route-options li:last-child {
-        border-bottom: 0px;
-    }
-    .route-options small {
-        margin-left: 2.3em;
-        color: #133c60;
-    }
-    .material-icons {
-        vertical-align: middle;
-    }
-    .directions_bus {
-        color: #0d406d;
-    }
-    .directions_railway {
-        color: #601b77;
-    }
-    .subway {
-        color: #771a1a;
-    }
-    .tram {
-        color: #206315;
-    }
-</style>
-
 <body>
 <div class="pure-g">
 

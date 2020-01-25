@@ -1,0 +1,47 @@
+
+
+body {
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
+}
+.route-name {
+    background: #ddd;
+    color: #bf4d3b;
+    padding: 0.5em;
+}
+
+.route-options {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 1em;
+}
+
+.route-options li {
+    display: block;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    color: #00203D;
+    border-bottom: 1px dotted #bf4d3b;
+}
+.route-options li:last-child {
+    border-bottom: 0;
+    padding-bottom: 0
+}
+.route-options small {
+    margin-left: 2.3em;
+    color: #133c60;
+}
+.material-icons {
+    vertical-align: middle;
+}
+.directions_bus {
+    color: #0d406d;
+}
+.directions_railway {
+    color: #601b77;
+}
+.subway {
+    color: #771a1a;
+}
+.tram {
+    color: #206315;
+}
