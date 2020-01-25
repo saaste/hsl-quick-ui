@@ -20,7 +20,8 @@ docker build . -t hsl-quick-ui:latest
 ## Running in docker
 ```bash
 # Interactive
-docker run --name="hsl-quick-ui" -p 5000:5000 hsl-quick-ui:latest
+docker run -it --name="hsl-quick-ui" -p 5000:5000 hsl-quick-ui:latest
+
 # As a daemon
- docker run -d --name="hsl-quick-ui" -p 5000:5000 hsl-quick-ui:latest
+docker run -d --name="hsl-quick-ui" -p 5000:5000 hsl-quick-ui:latest
 ```
