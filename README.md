@@ -8,5 +8,18 @@ pip install -r requirements.txt
 
 ## Running
 ```bash
-FLASK_APP=server.py venv/bin/flask run
+python3 server.py
+```
+
+## Building docker image
+```bash
+docker build . -t hsl-quick-ui:latest
+```
+
+## Running in docker
+```bash
+# Interactive
+docker run --name="hsl-quick-ui" -p 5000:5000 hsl-quick-ui:latest
+# As a daemon
+ docker run -d --name="hsl-quick-ui" -p 5000:5000 hsl-quick-ui:latest
 ```
