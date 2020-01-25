@@ -2,15 +2,89 @@
 <html lang="en">
 <head>
     <title>Next routes</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
+    <!--<![endif]-->
+    <meta http-equiv="refresh" content="60" />
 </head>
+<style>
+    body {
+        font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
+    }
+    .route-name {
+        background: #ddd;
+        color: #bf4d3b;
+        padding: 0.5em;
+    }
+
+    .route-options {
+        list-style-type: none;
+        margin: 0;
+        padding: 0 1em;
+    }
+
+    .route-options li {
+        display: block;
+        margin-bottom: 0.5em;
+        padding-bottom: 0.5em;
+        color: #00203D;
+        border-bottom: 1px dotted #bf4d3b;
+    }
+    .route-options li:last-child {
+        border-bottom: 0px;
+    }
+    .route-options small {
+        margin-left: 2.3em;
+        color: #133c60;
+    }
+    .material-icons {
+        vertical-align: middle;
+    }
+    .directions_bus {
+        color: #0d406d;
+    }
+    .directions_railway {
+        color: #601b77;
+    }
+    .subway {
+        color: #771a1a;
+    }
+    .tram {
+        color: #206315;
+    }
+</style>
+
 <body>
-<ul id="routes">
-    {% for route, steps in routes.items() %}
-    <h1>{{ route }}</h1>
-    {% for step in steps %}
-        {{ step }}
+<div class="pure-g">
+
+    {% for route, ride_options in routes.items() %}
+    <div class="pure-u-1">
+
+        <h3 class="route-name">{{ route }}</h3>
+
+        <ul class="route-options">
+        {% for ride_option in ride_options %}
+            <li>
+                <i class="material-icons {{ ride_option['steps'][0]['icon'] }}">{{ ride_option['steps'][0]['icon'] }}</i>
+                {{ ride_option['steps'][0]['start_time'] }}
+                {{ ride_option['steps'][0]['route_name'] }} @
+                {{ ride_option['steps'][0]['stop_name'] }} ({{ ride_option['steps'][0]['stop_code'] }})<br />
+                <small>
+                    Kävelyä {{ ride_option['walking_distance'] }} metriä /
+                    Kesto {{ ride_option['duration'] }} minuuttia
+                </small>
+            </li>
+        {% endfor %}
+        </ul>
+
+    </div>
     {% endfor %}
-    {% endfor %}
-</ul>
+
+</div>
 </body>
 </html>
