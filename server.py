@@ -2,10 +2,10 @@ from flask import Flask
 from flask import render_template
 from hsl_client import get_next_route
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 
-@app.route("/")
+@application.route("/")
 def next_routes():
     routes = {
         'Mäkkylä - Leppävaara': get_next_route('Mäkkylä::60.22257,24.83063', 'Leppävaara::60.218887,24.812701'),
@@ -17,4 +17,4 @@ def next_routes():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    application.run(host='0.0.0.0', port=80)
